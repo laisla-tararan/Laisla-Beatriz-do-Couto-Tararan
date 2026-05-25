@@ -142,10 +142,10 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#0a0a0c',
   },
   header: {
-    backgroundColor: '#333333',
+    backgroundColor: '#1c1c22',
     paddingHorizontal: 20,
     paddingTop: 20,
     paddingBottom: 20,
@@ -153,11 +153,11 @@ const styles = StyleSheet.create({
   headerTitulo: {
     fontSize: 26,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: '#d94f8a',
   },
   headerSubtitulo: {
     fontSize: 13,
-    color: '#CCCCCC',
+    color: '#f5f2f7',
     marginTop: 4,
   },
   lista: {
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#c7c7d1',
     borderRadius: 12,
     padding: 14,
     shadowColor: '#000',
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#E0E0E0',
+    backgroundColor: '#FF77C8',
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 14,
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   cardIconeTexto: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#555555',
+    color: '#f8f8ff',
   },
   cardInfo: {
     flex: 1,
@@ -196,11 +196,11 @@ const styles = StyleSheet.create({
   cardTitulo: {
     fontSize: 15,
     fontWeight: '600',
-    color: '#1A1A1A',
+    color: '#ffffff',
     marginBottom: 4,
   },
   cardSubtitulo: {
     fontSize: 13,
-    color: '#888888',
+    color: '#fff',
   },
 });

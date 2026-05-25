@@ -1,6 +1,5 @@
 // TODO: estilizar esta tela com as cores e identidade visual do seu tema
-// TODO: importar useState — adicione a linha abaixo no topo:
-// import { useState } from 'react';
+import { useState } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -12,22 +11,19 @@ import {
 
 // Dados de fallback — usados enquanto a navegacao nao estiver configurada
 const jogoMock = {
-  titulo: "The Legend of Zelda: Breath of the Wild",
-  genero: "Aventura / Mundo Aberto",
-  plataforma: "Nintendo Switch",
-  nota: "10/10",
+  titulo: 'HayDay',
+  genero: 'Jogo eletrônico de estratégia',
+  plataforma: 'Mobile / PC',
+  nota: '10/10',
   sinopse:
-    "Explore um vasto mundo aberto em Hyrule. Resolva puzzles, enfrente inimigos e descubra segredos em uma das aventuras mais aclamadas da historia dos games.",
+    'No game, você recebe um pedaço de terra como herança e precisa cuidar de plantações e animais, gerando lucro com a venda de produtos como queijo, manteiga, torta, bolo, pipoca e até roupas.',
 };
 
-// TODO: adicionar { route, navigation } como parametros quando a navegacao estiver configurada
 // Os dados chegam via route.params quando o usuario toca em um jogo na HomeScreen
-export default function DetalheScreen() {
-  // Defina os parâmetros de rota, pegando todos os campos presentes no objeto JOGOS definido na HomeScreen
-  // const { titulo... } = route?.params ?? jogoMock;
+export default function DetalheScreen( route, navigation ) {
+  const { titulo, genero, plataforma, nota, sinopse } = route?.params ?? jogoMock;
 
-  // TODO: estado booleano para controlar se o jogo foi salvo na lista
-  // const [isSalvo, setIsSalvo] = useState(false);
+  const [isSalvo, setIsSalvo] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -56,13 +52,8 @@ export default function DetalheScreen() {
           <Text style={styles.secaoTitulo}>Sinopse</Text>
           <Text style={styles.detalheTexto}>{sinopse}</Text>
         </View>
-
-        {/* TODO: quando implementar o estado isSalvo, use:
-            onPress={() => setIsSalvo(prev => !prev)}
-            style={[styles.botao, isSalvo && styles.botaoAtivo]}
-            texto: isSalvo ? 'Remover da Lista' : 'Adicionar a Lista' */}
-        <TouchableOpacity style={styles.botao}>
-          <Text style={styles.botaoTexto}>Adicionar a Lista</Text>
+        <TouchableOpacity style={styles.botao, isSalvo && styles.botaoAtivo} onPress={() => setIsSalvo(prev => !prev)} >
+            <Text style={styles.botaoTexto}>{isSalvo ? 'Remover da Lista' : 'Adicionar a Lista'}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>

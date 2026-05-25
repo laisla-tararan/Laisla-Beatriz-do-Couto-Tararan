@@ -1,6 +1,5 @@
 // TODO: estilizar esta tela com as cores e identidade visual do seu tema
-// TODO: importar useState e useEffect — adicione a linha abaixo no topo:
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
   FlatList,
   SafeAreaView,
@@ -11,52 +10,51 @@ import {
   View,
 } from 'react-native';
 
-// TODO: substituir pelos jogos que voce escolheu
 const jogos = [
   {
     id: '1',
-    titulo: 'The Legend of Zelda: Breath of the Wild',
-    genero: 'Aventura / Mundo Aberto',
-    plataforma: 'Nintendo Switch',
+    titulo: 'HayDay',
+    genero: 'Jogo eletrônico de estratégia',
+    plataforma: 'Mobile / PC',
     nota: '10/10',
     sinopse:
-      'Explore um vasto mundo aberto em Hyrule. Resolva puzzles, enfrente inimigos e descubra segredos em uma das aventuras mais aclamadas da historia dos games.',
+      'No game, você recebe um pedaço de terra como herança e precisa cuidar de plantações e animais, gerando lucro com a venda de produtos como queijo, manteiga, torta, bolo, pipoca e até roupas.',
   },
   {
     id: '2',
-    titulo: 'Red Dead Redemption 2',
-    genero: 'Acao / Mundo Aberto',
-    plataforma: 'PS4 / Xbox / PC',
+    titulo: 'Roblox',
+    genero: 'RGPs / Simulações / Terror',
+    plataforma: 'PS4 / Xbox / PC / Mobile',
     nota: '10/10',
     sinopse:
-      'Uma epica historia sobre a vida fora da lei no coracao da America. Viva a aventura de Arthur Morgan no velho oeste em um mundo detalhado e imersivo.',
+      'O Roblox é uma plataforma global imersiva e um sistema de criação onde usuários podem programar e jogar uma infinidade de jogos criados pela própria comunidade Wikipedia.',
   },
   {
     id: '3',
-    titulo: 'God of War',
+    titulo: 'Grand Theft Auto V',
     genero: 'Acao / Aventura',
     plataforma: 'PS4 / PC',
     nota: '10/10',
     sinopse:
-      'Kratos e seu filho Atreus embarcam em uma jornada pelos Nove Reinos da mitologia nordica. Um dos jogos mais premiados de sua geracao.',
+      'A história de Grand Theft Auto V gira em torno de três criminosos em Los Santos: um jovem malandro de rua (Franklin), um ladrão de bancos aposentado (Michael) e um psicopata (Trevor). Suas vidas se cruzam quando se envolvem com o submundo do crime e agências corruptas.',
   },
   {
     id: '4',
-    titulo: 'Hollow Knight',
-    genero: 'Metroidvania / Plataforma',
-    plataforma: 'PC / Switch / PS4',
+    titulo: '8 Ball Pool',
+    genero: 'Simulação',
+    plataforma: 'Mobile',
     nota: '9/10',
     sinopse:
-      'Explore um vasto reino subterraneo habitado por insetos. Um desafio preciso e belo, com um mundo imenso para descobrir.',
+      'O objetivo é encaçapar todas as suas bolas (lisas ou listradas) e, por fim, a bola 8 preta antes do adversário, competindo em torneios 1x1, subindo de nível e ganhando recompensas.',
   },
   {
     id: '5',
-    titulo: 'Celeste',
-    genero: 'Plataforma / Indie',
+    titulo: 'The Last of Us',
+    genero: 'Simulação / Aventura',
     plataforma: 'PC / Switch / PS4',
-    nota: '9/10',
+    nota: '10/10',
     sinopse:
-      'Ajude Madeline a sobreviver sua viagem interior pela montanha Celeste. Um platformer desafiador com uma historia tocante sobre superacao.',
+      'Acompanha Joel, um contrabandista endurecido, encarregado de escoltar Ellie, uma adolescente de 14 anos, para fora de uma zona de quarentena militar. O que começa como um pequeno trabalho se transforma em uma jornada brutal e emocionante pelos Estados Unidos, arruinados por uma pandemia fúngica que dizimou a civilização.',
   },
   {
     id: '6',
@@ -69,37 +67,29 @@ const jogos = [
   },
 ];
 
-// TODO: adicionar { navigation } como parametro quando a navegacao estiver configurada
-export default function HomeScreen() {
-  // TODO: estado para o texto digitado na busca
-  // const [busca, setBusca] = useState('');
+export default function HomeScreen({ navigation }) {
+  const [busca, setBusca] = useState('');
+  const [jogosFiltrados, setJogosFiltrados] = useState(jogos);
 
-  // TODO: estado com os jogos exibidos na lista — inicia com todos
-  // const [jogosFiltrados, setJogosFiltrados] = useState(jogos);
-
-  // TODO: filtrar os jogos sempre que o valor de 'busca' mudar
-  // useEffect(() => {
-  //   const resultado = jogos.filter((jogo) =>
-  //     jogo.titulo.toLowerCase().includes(busca.toLowerCase())
-  //   );
-  //   setJogosFiltrados(resultado);
-  // }, [busca]);
+  useEffect(() => {
+    const resultado = jogos.filter((jogo) =>
+      jogo.titulo.toLowerCase().includes(busca.toLowerCase())
+    );
+    setJogosFiltrados(resultado);
+  }, [busca]);
 
   function renderItem({ item }) {
     return (
-      <TouchableOpacity
-        style={styles.card}
-        // TODO: implementar onPress com navigation.navigate passando os dados do jogo
-        // onPress={() => navigation.navigate('Detalhe', { ...item })}
-      >
+      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Detalhe', { ...item })}>
         <View style={styles.cardIcone}>
           {/* TODO: substituir pela inicial do titulo ou outro elemento do seu tema */}
           <Text style={styles.cardIconeTexto}>{item.titulo[0]}</Text>
         </View>
         <View style={styles.cardInfo}>
-          {/* TODO: substituir pelos campos do seu tema */}
           <Text style={styles.cardTitulo}>{item.titulo}</Text>
           <Text style={styles.cardSubtitulo}>{item.genero}</Text>
+          <Text style={styles.cardSubtitulo}>{item.plataforma}</Text>
+          <Text style={styles.cardSubtitulo}>{item.nota}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -108,27 +98,22 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        {/* TODO: colocar o nome do seu app e subtitulo */}
-        <Text style={styles.headerTitulo}>Catalogo de Games</Text>
+        <Text style={styles.headerTitulo}> Tararan Games </Text>
         <Text style={styles.headerSubtitulo}>
-          Escolha um jogo para ver os detalhes
+          Escolha um jogo para saber mais, Diva(o)!
         </Text>
       </View>
-
-      {/* Campo de busca — TODO: adicionar value={busca} e onChangeText={setBusca} */}
       <View style={styles.buscaContainer}>
         <TextInput
           style={styles.buscaInput}
           placeholder="Buscar jogo..."
           placeholderTextColor="#999"
-          // value={busca}
-          // onChangeText={setBusca}
+          value={busca}
+          onChangeText={setBusca}
         />
       </View>
-
-      {/* TODO: trocar data={jogos} por data={jogosFiltrados} apos implementar o estado */}
       <FlatList
-        data={jogos}
+        data={jogosFiltrados}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         contentContainerStyle={styles.lista}
@@ -141,7 +126,7 @@ export default function HomeScreen() {
 // TODO: estilizar com as cores e identidade visual do seu tema
 const styles = StyleSheet.create({
   buscaContainer: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#eeeeee',
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderBottomWidth: 1,
@@ -163,7 +148,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#333333',
     paddingHorizontal: 20,
     paddingTop: 20,
-    paddingBottom: 24,
+    paddingBottom: 20,
   },
   headerTitulo: {
     fontSize: 26,

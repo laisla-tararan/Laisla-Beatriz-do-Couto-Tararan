@@ -17,25 +17,29 @@ export default function PerfilScreen() {
       <View style={styles.cartao}>
         {/* TODO: personalizar o avatar com a inicial do nome do usuario */}
         <View style={styles.avatar}>
-          <Text style={styles.avatarTexto}>U</Text>
+          <Text style={styles.avatarTexto}>L</Text>
         </View>
         {/* TODO: personalizar nome e e-mail */}
-        <Text style={styles.nome}>Nome do Usuario</Text>
-        <Text style={styles.email}>usuario@email.com</Text>
+        <Text style={styles.nome}>laisla-tararan</Text>
+        <Text style={styles.email}>laisla.tararan@email.com</Text>
 
         <View style={styles.separador} />
 
         {/* TODO: substituir pelas estatisticas que fazem sentido no seu tema */}
         <View style={styles.infoLinha}>
-          <Text style={styles.infoLabel}>Itens salvos</Text>
+          <Text style={styles.infoLabel}>🎮Jogos salvos</Text>
           <Text style={styles.infoValor}>0</Text>
         </View>
         <View style={styles.infoLinha}>
-          <Text style={styles.infoLabel}>Itens favoritos</Text>
+          <Text style={styles.infoLabel}>⭐Jogos favoritos</Text>
           <Text style={styles.infoValor}>0</Text>
         </View>
         <View style={styles.infoLinha}>
-          <Text style={styles.infoLabel}>Membro desde</Text>
+          <Text style={styles.infoLabel}>👑 Level</Text>
+          <Text style={styles.infoValor}>99</Text>
+        </View>
+        <View style={styles.infoLinha}>
+          <Text style={styles.infoLabel}>📆 Membro desde</Text>
           <Text style={styles.infoValor}>Maio 2026</Text>
         </View>
       </View>

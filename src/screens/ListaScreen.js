@@ -2,61 +2,57 @@
 
 import { useState } from "react";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
-// TODO: apos criar o componente CardJogo, importe-o aqui:
-// import { CardJogo } from '../components';
+import { CardJogo } from '../components/index';
 
 // Dados de exemplo para voce visualizar o renderItem funcionando
 // Em um app real, esses itens chegariam via route.params enviados pela DetalheScreen
 const jogosMock = [
   {
-    id: "1",
-    titulo: "The Legend of Zelda: Breath of the Wild",
-    genero: "Aventura / Mundo Aberto",
-    plataforma: "Nintendo Switch",
-    nota: "10/10",
+    id: '1',
+    titulo: 'HayDay',
+    genero: 'Jogo eletrônico de estratégia',
+    plataforma: 'Mobile / PC',
+    nota: '10/10',
+    sinopse:
+      'No game, você recebe um pedaço de terra como herança e precisa cuidar de plantações e animais, gerando lucro com a venda de produtos como queijo, manteiga, torta, bolo, pipoca e até roupas.',
   },
   {
-    id: "3",
-    titulo: "God of War",
-    genero: "Acao / Aventura",
-    plataforma: "PS4 / PC",
-    nota: "10/10",
+    id: '2',
+    titulo: 'Roblox',
+    genero: 'RGPs / Simulações / Terror',
+    plataforma: 'PS4 / Xbox / PC / Mobile',
+    nota: '10/10',
+    sinopse:
+      'O Roblox é uma plataforma global imersiva e um sistema de criação onde usuários podem programar e jogar uma infinidade de jogos criados pela própria comunidade Wikipedia.',
   },
 ];
 
 export default function ListaScreen({ route }) {
   const [itensSalvos, setItensSalvos] = useState(jogosMock);
-
   // Para receber um jogo salvo da DetalheScreen via route.params:
-  // if (route.params?.novoJogo) {
-  //   setItensSalvos(prev => [...prev, route.params.novoJogo]);
-  // }
+  if (route.params?.novoJogo) {
+    setItensSalvos(prev => [...prev, route.params.novoJogo]);
+  }
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        {/* TODO: renomeie o titulo para o seu tema */}
-        <Text style={styles.headerTitulo}>Minha Lista</Text>
+        <Text style={styles.headerTitulo}>Lista das Mais Mais</Text>
       </View>
 
       <FlatList
         data={itensSalvos}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
-          // TODO: crie o arquivo src/components/CardJogo.js
-          // O componente CardJogo deve receber as props: titulo, genero, plataforma e nota
-          // Depois substitua este bloco por:
-          // <CardJogo titulo={item.titulo} genero={item.genero} plataforma={item.plataforma} nota={item.nota} />
-          <View style={styles.card} />
+          <CardJogo titulo={item.titulo} genero={item.genero} plataforma={item.plataforma} nota={item.nota} />
         )}
         ListEmptyComponent={
           <View style={styles.conteudo}>
             <View style={styles.iconeContainer}>
-              {/* TODO: troque pela inicial do seu tema */}
-              <Text style={styles.icone}>G</Text>
+              <Text style={styles.icone}>T</Text>
             </View>
             <Text style={styles.titulo}>Nenhum jogo salvo</Text>
-            <Text style={styles.descricao}>Sua lista aparecera aqui</Text>
+            <Text style={styles.descricao}>Sua lista aparecerá aqui</Text>
             <Text style={styles.dica}>
               Acesse um jogo e toque em "Adicionar a Lista" para salva-lo aqui.
             </Text>

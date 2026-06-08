@@ -52,13 +52,15 @@ export default function PerfilScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#783737",
+    backgroundColor: "#000000", // Substituído o marrom pelo preto puro padrão do app
   },
   header: {
-    backgroundColor: "#ff00a6",
+    backgroundColor: "#121212", // Integrado ao padrão de tom escuro das outras telas
     paddingHorizontal: 20,
     paddingTop: 20,
     paddingBottom: 24,
+    borderBottomWidth: 1,
+    borderBottomColor: "#FF1493", // Linha divisória em rosa choque
   },
   headerTitulo: {
     fontSize: 26,
@@ -67,47 +69,47 @@ const styles = StyleSheet.create({
   },
   cartao: {
     margin: 16,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#1A1A1A", // Card em cinza escuro para se destacar do fundo preto
     borderRadius: 16,
     padding: 24,
     alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
+    shadowColor: "#FF1493", // Sombra leve em rosa choque criando efeito glow sutil
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
     shadowRadius: 8,
-    elevation: 4,
+    elevation: 5,
   },
   avatar: {
     width: 88,
     height: 88,
     borderRadius: 44,
-    backgroundColor: "#E0E0E0",
+    backgroundColor: "rgba(255, 20, 147, 0.1)", // Fundo do avatar com leve transparência rosa choque
     alignItems: "center",
     justifyContent: "center",
     borderWidth: 3,
-    borderColor: "#AAAAAA",
+    borderColor: "#FF1493", // Borda marcante em rosa choque para destacar a foto/iniciais
     marginBottom: 16,
   },
   avatarTexto: {
     fontSize: 36,
     fontWeight: "bold",
-    color: "#555555",
+    color: "#FFFFFF", // Letra do avatar em branco puro
   },
   nome: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#1A1A1A",
+    color: "#FFFFFF", // Nome do usuário em destaque branco
     marginBottom: 4,
   },
   email: {
     fontSize: 14,
-    color: "#888888",
+    color: "#FFB6C1", // Email em rosa claro (ótima legibilidade e estilo no tema escuro)
     marginBottom: 20,
   },
   separador: {
     width: "100%",
     height: 1,
-    backgroundColor: "#F0F0F0",
+    backgroundColor: "rgba(255, 182, 193, 0.2)", // Divisor sutil em rosa claro transparente
     marginBottom: 16,
   },
   infoLinha: {
@@ -118,23 +120,28 @@ const styles = StyleSheet.create({
   },
   infoLabel: {
     fontSize: 14,
-    color: "#555555",
+    color: "#A0A0A0", // Cinza claro neutro para as labels de informação
   },
   infoValor: {
     fontSize: 14,
     fontWeight: "600",
-    color: "#333333",
+    color: "#FFFFFF", // Dados em branco para facilitar a leitura rápida
   },
   botao: {
     marginHorizontal: 16,
-    backgroundColor: "#333333",
+    backgroundColor: "#FF1493", // Botão principal em rosa choque
     borderRadius: 12,
     paddingVertical: 14,
     alignItems: "center",
+    shadowColor: "#FF1493",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 4,
   },
   botaoTexto: {
     fontSize: 15,
     fontWeight: "bold",
-    color: "#FFFFFF",
+    color: "#000000", // Texto do botão em preto para o contraste perfeito sobre o rosa choque
   },
 });

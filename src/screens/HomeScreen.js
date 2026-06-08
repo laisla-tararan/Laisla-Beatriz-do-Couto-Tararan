@@ -126,38 +126,42 @@ export default function HomeScreen({ navigation }) {
 // TODO: estilizar com as cores e identidade visual do seu tema
 const styles = StyleSheet.create({
   buscaContainer: {
-    backgroundColor: '#eeeeee',
+    backgroundColor: '#000000', // Fundo preto puro para a barra de busca
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
+    borderBottomColor: '#FF1493', // Linha divisória em rosa choque
   },
   buscaInput: {
-    backgroundColor: '#F0F0F0',
+    backgroundColor: '#1A1A1A', // Input cinza escuro para contrastar com o fundo preto
     borderRadius: 8,
     paddingHorizontal: 14,
     paddingVertical: 10,
     fontSize: 14,
-    color: '#1A1A1A',
+    color: '#FFFFFF', // Texto digitado em branco
+    borderWidth: 1,
+    borderColor: 'rgba(255, 20, 147, 0.3)', // Borda sutil em rosa choque
   },
   container: {
     flex: 1,
-    backgroundColor: '#0a0a0c',
+    backgroundColor: '#000000', // Mantendo o padrão de fundo preto total
   },
   header: {
-    backgroundColor: '#1c1c22',
+    backgroundColor: '#121212', // Cabeçalho levemente mais claro que o fundo
     paddingHorizontal: 20,
     paddingTop: 20,
     paddingBottom: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(255, 182, 193, 0.2)', // Linha suave em rosa claro
   },
   headerTitulo: {
     fontSize: 26,
     fontWeight: 'bold',
-    color: '#d94f8a',
+    color: '#FF1493', // Título principal em Rosa Choque vibrante
   },
   headerSubtitulo: {
     fontSize: 13,
-    color: '#f5f2f7',
+    color: '#FFB6C1', // Subtítulo em Rosa Claro para melhor hierarquia visual
     marginTop: 4,
   },
   lista: {
@@ -167,20 +171,20 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#c7c7d1',
+    backgroundColor: '#1A1A1A', // Corrigido de cinza claro para cinza escuro (combina com o tema dark)
     borderRadius: 12,
     padding: 14,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
+    shadowColor: '#FF1493', // Sombra em rosa choque para dar efeito de profundidade
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
     shadowRadius: 6,
-    elevation: 3,
+    elevation: 4,
   },
   cardIcone: {
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#FF77C8',
+    backgroundColor: '#FF1493', // Círculo do ícone em Rosa Choque
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 14,
@@ -188,7 +192,7 @@ const styles = StyleSheet.create({
   cardIconeTexto: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#f8f8ff',
+    color: '#FFFFFF', // Texto do ícone em Branco puro
   },
   cardInfo: {
     flex: 1,
@@ -196,11 +200,11 @@ const styles = StyleSheet.create({
   cardTitulo: {
     fontSize: 15,
     fontWeight: '600',
-    color: '#ffffff',
+    color: '#FFFFFF', // Corrigido para Branco (no original estava branco sobre fundo cinza claro, ilegível)
     marginBottom: 4,
   },
   cardSubtitulo: {
     fontSize: 13,
-    color: '#fff',
+    color: '#FFB6C1', // Corrigido para Rosa Claro para dar contraste e beleza sobre o card escuro
   },
 });

@@ -64,27 +64,34 @@ export default function DetalheScreen( route, navigation ) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: "#000000", // Preto puro de fundo para alto contraste
   },
   hero: {
-    backgroundColor: "#333333",
+    backgroundColor: "#121212", // Cinza quase preto para separar o hero do fundo
     alignItems: "center",
     paddingVertical: 28,
     paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: "#FF1493", // Linha fina em rosa choque para detalhe
   },
   heroIcone: {
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: "#555555",
+    backgroundColor: "#FF1493", // Rosa Choque vibrante no fundo do ícone
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 14,
+    shadowColor: "#FF1493",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 10,
+    elevation: 8, // Efeito de brilho (glow) no ícone
   },
   heroIconeTexto: {
     fontSize: 36,
     fontWeight: "bold",
-    color: "#FFFFFF",
+    color: "#FFFFFF", // Branco para legibilidade
   },
   heroTitulo: {
     fontSize: 22,
@@ -95,24 +102,26 @@ const styles = StyleSheet.create({
   },
   heroSubtitulo: {
     fontSize: 14,
-    color: "#CCCCCC",
+    color: "#FFB6C1", // Rosa Claro para o subtítulo ter bom contraste, mas não brigar com o título
     marginBottom: 16,
   },
   heroMeta: {
     flexDirection: "row",
     alignItems: "center",
     gap: 20,
-    backgroundColor: "rgba(255,255,255,0.1)",
+    backgroundColor: "rgba(255, 20, 147, 0.15)", // Fundo rosa choque com transparência
     borderRadius: 12,
     paddingVertical: 10,
     paddingHorizontal: 24,
+    borderWidth: 1,
+    borderColor: "rgba(255, 20, 147, 0.3)",
   },
   metaItem: {
     alignItems: "center",
   },
   metaLabel: {
     fontSize: 11,
-    color: "#AAAAAA",
+    color: "#FFB6C1", // Rosa Claro suave
     marginBottom: 2,
   },
   metaValor: {
@@ -123,46 +132,51 @@ const styles = StyleSheet.create({
   metaSeparador: {
     width: 1,
     height: 28,
-    backgroundColor: "rgba(255,255,255,0.3)",
+    backgroundColor: "rgba(255, 182, 193, 0.4)", // Divisor em rosa claro transparente
   },
   secao: {
     margin: 16,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#1A1A1A", // Card em cinza escuro para se destacar do fundo preto
     borderRadius: 12,
     padding: 16,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.06,
-    shadowRadius: 6,
-    elevation: 2,
+    shadowColor: "#FF1493", // Sombra sutil rosa
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
   },
   secaoTitulo: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#333333",
+    color: "#FF1493", // Rosa Choque para os títulos das seções chamarem atenção
     marginBottom: 10,
   },
   detalheTexto: {
     fontSize: 14,
-    color: "#555555",
+    color: "#FFFFFF", // Texto principal em branco para leitura confortável no escuro
     lineHeight: 22,
   },
   botao: {
     margin: 16,
     marginTop: 4,
-    backgroundColor: "#333333",
+    backgroundColor: "#FF1493", // Botão principal em Rosa Choque
     borderRadius: 12,
     paddingVertical: 14,
     alignItems: "center",
     marginBottom: 32,
+    shadowColor: "#FF1493",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 5,
   },
-  // TODO: estilizar o estado ativo do botao com a cor do seu tema
+  // Solução do TODO: O botão ativo assume um tom de Rosa Claro para indicar o clique/foco
   botaoAtivo: {
-    backgroundColor: "#555555",
+    backgroundColor: "#FFB6C1", 
   },
   botaoTexto: {
     fontSize: 15,
     fontWeight: "bold",
-    color: "#FFFFFF",
+    color: "#000000", // Texto preto dentro do botão rosa para contraste perfeito
   },
 });

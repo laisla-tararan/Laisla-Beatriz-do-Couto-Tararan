@@ -15,17 +15,14 @@ export default function PerfilScreen() {
       </View>
 
       <View style={styles.cartao}>
-        {/* TODO: personalizar o avatar com a inicial do nome do usuario */}
         <View style={styles.avatar}>
           <Text style={styles.avatarTexto}>L</Text>
         </View>
-        {/* TODO: personalizar nome e e-mail */}
         <Text style={styles.nome}>laisla-tararan</Text>
         <Text style={styles.email}>laisla.tararan@email.com</Text>
 
         <View style={styles.separador} />
 
-        {/* TODO: substituir pelas estatisticas que fazem sentido no seu tema */}
         <View style={styles.infoLinha}>
           <Text style={styles.infoLabel}>🎮Jogos salvos</Text>
           <Text style={styles.infoValor}>0</Text>
@@ -44,7 +41,6 @@ export default function PerfilScreen() {
         </View>
       </View>
 
-      {/* TODO: mudar o texto do botao para o contexto do seu tema */}
       <TouchableOpacity style={styles.botao}>
         <Text style={styles.botaoTexto}>Editar perfil</Text>
       </TouchableOpacity>
@@ -56,10 +52,10 @@ export default function PerfilScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: "#783737",
   },
   header: {
-    backgroundColor: "#333333",
+    backgroundColor: "#ff00a6",
     paddingHorizontal: 20,
     paddingTop: 20,
     paddingBottom: 24,
